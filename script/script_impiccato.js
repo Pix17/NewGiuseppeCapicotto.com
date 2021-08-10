@@ -65,10 +65,13 @@ var immagini = [
 var select = Math.floor(Math.random() * parola.length); 
 var parola_scelta = parola[select];
 var parola_length = parola[select].length;
+var trovate = [];
 
 for(let i=0; i<lettere.length; i++){
     if(parola_scelta[i] == undefined){
         lettere[i].style.display = "none";
+    }else{
+        trovate[i]=false;
     }
 }
 // Mi semplifico tramite costanti gli elementi riutilizzati piu volte
@@ -92,7 +95,17 @@ try_btn.onclick = function(){
             if(parola_scelta[i] == tentativo){
                 lettere[i].innerHTML = tentativo;
                 presente=true;
+                trovate[i]=presente;
                 indovinati++;
+
+                lettere[i].style.transition = ".8s";
+                lettere[i].style.backgroundColor = "var(--indovinata)";
+                if(+screen.width > 768){
+                    lettere[i].style.transform = "rotate(-360deg) scale(1.5)";
+                }else{
+                    lettere[i].style.transform = "rotate(-360deg)";
+
+                }
             }
         }
 
@@ -131,7 +144,13 @@ try_btn.onclick = function(){
 // Funzione accessoria
 function visualizza(){
     for(let i=0; i<parola_length; i++){
+        
         lettere[i].innerHTML = parola_scelta[i];
+        if(!trovate[i]){   
+            lettere[i].style.transition = ".8s";   
+            lettere[i].style.transform = "translateY(1rem)";      
+            lettere[i].style.backgroundColor = "var(--non-indovinata)";
+            }
     }
     res.style.display = "none";
     return false;
