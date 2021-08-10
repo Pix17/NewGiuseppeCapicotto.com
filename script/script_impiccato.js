@@ -97,25 +97,20 @@ try_btn.onclick = function(){
                 presente=true;
                 trovate[i]=presente;
                 indovinati++;
-
                 lettere[i].style.transition = ".8s";
                 lettere[i].style.backgroundColor = "var(--indovinata)";
                 if(+screen.width > 768){
                     lettere[i].style.transform = "rotate(-360deg) scale(1.5)";
                 }else{
                     lettere[i].style.transform = "rotate(-360deg)";
-
                 }
             }
         }
-
         if(!presente){
             vite--;
             h1.innerHTML = "Hai a disposizione "+vite+" vite";
             container.innerHTML = immagini[vite];
-
         }
-
         presente=false;
         if(indovinati == parola_length){
             h1.innerHTML = "Hai vinto!";
@@ -131,7 +126,6 @@ try_btn.onclick = function(){
             // container.innerHTML = '<img src="img/impiccato0.png" alt="Traliccio dell impiccato">';
             fine = true;     
         }
-
         input.value = "";
         res.onclick = visualizza;
         return false;
@@ -155,6 +149,3 @@ function visualizza(){
     res.style.display = "none";
     return false;
 }
-
-
-
