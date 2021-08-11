@@ -87,6 +87,8 @@ var indovinati = 0;
 var presente = false;
 var fine = false;
 
+sug.onclick = aiuto;
+
 // Funzione principale
 try_btn.onclick = function(){
     if(!fine){
@@ -140,7 +142,6 @@ try_btn.onclick = function(){
     }
 }
 
-sug.onclick = aiuto;
 
 // Funzione accessoria
 function visualizza(){
@@ -167,16 +168,35 @@ function aiuto(){
             }
     }while(!fatto);
 
+    
+
     sug.style.display = "none";
-    presente=true;
-    trovate[fortunata]=presente;
-    indovinati++;
-    lettere[fortunata].style.transition = ".8s";
-    lettere[fortunata].style.backgroundColor = "var(--indovinata)";
-    if(+screen.width > 768){
-        lettere[fortunata].style.transform = "rotate(-360deg) scale(1.5)";
-    }else{
-        lettere[fortunata].style.transform = "rotate(-360deg)";
+    //  trovate[fortunata]=true;
+    //  indovinati++;
+    //  lettere[fortunata].style.transition = ".8s";
+    //  lettere[fortunata].style.backgroundColor = "var(--suggerita)";
+    //  if(+screen.width > 768){
+    //      lettere[fortunata].style.transform = "rotate(-360deg) scale(1.5)";
+    //  }else{
+    //      lettere[fortunata].style.transform = "rotate(-360deg)";
+    //  }
+
+
+
+    for(let i=0; i<parola_length; i++){
+        if(parola_scelta[i] == parola_scelta[fortunata]){
+            lettere[i].innerHTML = parola_scelta[i];
+            trovate[i]=true;
+            indovinati++;
+            lettere[i].style.transition = ".8s";
+            lettere[i].style.backgroundColor = "var(--suggerita)";
+            if(+screen.width > 768){
+                lettere[i].style.transform = "rotate(-360deg) scale(1.5)";
+            }else{
+                lettere[i].style.transform = "rotate(-360deg)";
+     }
+             
+        }
     }
     
     return false;
