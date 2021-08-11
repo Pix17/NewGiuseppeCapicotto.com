@@ -78,6 +78,18 @@
 #res {
   display: none;
 }
+footer{
+  display: flex;
+}
+#top-ten {
+  flex: 1 50%;
+  height: 100%;
+  text-align: center;
+}
+#hall-of-fame {
+  flex: 1 50%;
+  height: 100%;
+}
 
 @media screen and (min-width: 2000px) {
   #try {

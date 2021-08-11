@@ -49,7 +49,6 @@ const parola = [
     "xilofono",
     "yoga",
     "zanzara","zaino","zaffiro","zebra","zerbino","zucchero"
-    
 ];
 
 // Array delle immagini
@@ -80,6 +79,8 @@ const input = document.getElementById("try");
 const h1 = document.getElementById("vite");
 const res = document.getElementById("res");
 const img = document.getElementById("container");
+const sug = document.getElementById("sug");
+
 // Variabili utili
 var vite = 4;
 var indovinati = 0;
@@ -112,6 +113,9 @@ try_btn.onclick = function(){
             container.innerHTML = immagini[vite];
         }
         presente=false;
+        if(indovinati+1 == parola_length) {
+            sug.style.display = "none";
+        }          
         if(indovinati == parola_length){
             h1.innerHTML = "Hai vinto!";
             try_btn.innerHTML = "Gioca ancora";
@@ -123,6 +127,7 @@ try_btn.onclick = function(){
             try_btn.innerHTML = "Gioca ancora"; 
             input.style.display = "none"; 
             res.style.display = "inherit";
+            sug.style.display = "none";
             // container.innerHTML = '<img src="img/impiccato0.png" alt="Traliccio dell impiccato">';
             fine = true;     
         }
@@ -134,6 +139,8 @@ try_btn.onclick = function(){
         return true;
     }
 }
+
+sug.onclick = aiuto;
 
 // Funzione accessoria
 function visualizza(){
@@ -147,5 +154,30 @@ function visualizza(){
             }
     }
     res.style.display = "none";
+    return false;
+}
+
+function aiuto(){
+    var fatto = false;
+    do{
+        var fortunata = Math.floor(Math.random() * parola_length); 
+        if(!trovate[fortunata]){
+            lettere[fortunata].innerHTML = parola_scelta[fortunata];
+            fatto = true;
+            }
+    }while(!fatto);
+
+    sug.style.display = "none";
+    presente=true;
+    trovate[fortunata]=presente;
+    indovinati++;
+    lettere[fortunata].style.transition = ".8s";
+    lettere[fortunata].style.backgroundColor = "var(--indovinata)";
+    if(+screen.width > 768){
+        lettere[fortunata].style.transform = "rotate(-360deg) scale(1.5)";
+    }else{
+        lettere[fortunata].style.transform = "rotate(-360deg)";
+    }
+    
     return false;
 }
