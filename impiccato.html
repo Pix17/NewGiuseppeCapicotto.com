@@ -13,19 +13,12 @@
     <!-- <meta property="og:image" content="img/" /> -->
     <meta property="og:description" content="Il classico gioco dell'impiccato!"/>
     <meta property="og:url" content="https://www.giuseppecapicotto.com/" />
-
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/style_impiccato.css" />
     <title>Impiccato</title>
   </head>
   <body>
     <!-- <div id="sfondo"></div> -->
     <header>
-      <!-- <nav>
-        <a href="https://www.giuseppecapicotto.com">
-          <img src="logo.png" alt="Logo header" />
-        </a>
-      </nav> -->
       <nav>
         <ul>
           <li id="a">A</li>
@@ -60,15 +53,8 @@
           <li id="z">Z</li>
         </ul>
       </nav>
-      <!-- <button id="menu" class="btn">=</button>
-      <button id="night-btn" class="btn">Tema scuro</button> -->
     </header>
     <main>
-      <div id="menu-scomparsa">
-        <ul>
-          <li><button id="menu-night-btn" class="btn">Tema scuro</button></li>
-        </ul>
-      </div>
       <div id="container">
         <img src="img/impiccato4.png" alt="Traliccio dell impiccato" />
       </div>
@@ -90,7 +76,44 @@
           <li id="letter14">*</li>
           <li id="letter15">*</li>
         </ul>
-        <form>
+        <div id="score">
+          <h3 id="vite">Hai a disposizione 4 vite</h3>
+        </div>
+        <div id="tastiera">
+          <div>
+            <button id="Q">Q</button>
+            <button id="W">W</button>
+            <button id="E">E</button>
+            <button id="R">R</button>
+            <button id="T">T</button>
+            <button id="Y">Y</button>
+            <button id="U">U</button>
+            <button id="I">I</button>
+            <button id="O">O</button>
+            <button id="P">P</button>
+          </div>
+          <div>
+            <button id="A">A</button>
+            <button id="S">S</button>
+            <button id="D">D</button>
+            <button id="F">F</button>
+            <button id="G">G</button>
+            <button id="H">H</button>
+            <button id="J">J</button>
+            <button id="K">K</button>
+            <button id="L">L</button>
+          </div>
+          <div>
+            <button id="Z">Z</button>
+            <button id="X">X</button>
+            <button id="C">C</button>
+            <button id="V">V</button>
+            <button id="B">B</button>
+            <button id="N">N</button>
+            <button id="M">M</button>
+          </div>
+        </div>
+        <form id="form">
           <input
             type="text"
             id="try"
@@ -103,16 +126,8 @@
           <button id="res" class="end-btn">Visualizza parola</button>
           <button id="sug" class="end-btn">Aiutino?!</button>
         </form>
-        <div id="score">
-          <h3 id="vite">Hai a disposizione 4 vite</h3>
-        </div>
       </div>
     </main>
-    <!-- <footer>
-      <div id="top-ten"></div>
-      <div id="hall-of-fame"></div>
-    </footer> -->
-    <script src="script/script.js"></script>
     <script src="script/script_impiccato.js"></script>
   </body>
 </html>

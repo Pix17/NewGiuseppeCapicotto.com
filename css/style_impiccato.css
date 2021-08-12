@@ -1,32 +1,97 @@
+/*
+// Breackpoint 2021
+Using min-width
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+
+Using max-width
+
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { ... }
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { ... }
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 :root {
+  --colore-scuro-hf: rgba(48, 54, 129, 0.5);
+  --colore-scuro-main: rgba(44, 49, 114, 0.5);
+  --colore-chiaro-hf: rgba(12, 193, 238, 0.5);
+  --colore-chiaro-main: rgba(12, 193, 238, 0.1);
+  --ombra-chiara: 10px 1px 15px rgba(12, 193, 238, 0.5);
+  --ombra-scura: 10px 1px 15px rgba(48, 54, 129, 1);
   --indovinata: rgba(255, 255, 0, 0.8);
   --non-indovinata: rgba(255, 0, 0, 0.8);
   --suggerita: rgba(0, 255, 0, 0.8);
 }
-/* #sfondo{
+
+body {
   background-image: url("../img/sfondo.jpg");
-  opacity: 70%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  z-index: -1;
-} */
-body{
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   height: 100vh;
-}
-header{
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
 }
 
+header {
+  flex: 1 5%;
+  background-color: var(--colore-chiaro-hf);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 5rem;
+  box-shadow: var(--ombra-chiara);
+  padding: 0 2rem;
+}
 header>nav>ul>li{
   background-color: black;
   border-radius: 5px;
   padding: .4rem;
   transform: scale(0.05);
+}
+header>nav>ul {
+  display: inline-flex;
+}
+header>nav>ul>li{
+  margin: 0 1rem;
+}
+
+ul{
+  list-style: none;
+}
+
+main {
+  flex: 1 95%;
+  background-color: var(--colore-chiaro-main);
+  display: flex;
+  flex-direction: column;
 }
 #container {
   width: 80%;
@@ -105,18 +170,70 @@ header>nav>ul>li{
 #res {
   display: none;
 }
-footer {
-  display: flex;
+#tastiera{
+  display: none;
 }
-#top-ten {
-  flex: 1 50%;
-  height: 100%;
-  text-align: center;
+
+
+/* >>>>>>>>>>>>>>> smartphone <<<<<<<<<<<<<<< */
+
+
+@media screen and (orientation: portrait) {
+  header>nav>ul{
+    display: inline-flex;
+  }
+  header>nav>ul>li{
+    margin: .1rem;
+  }
 }
-#hall-of-fame {
-  flex: 1 50%;
-  height: 100%;
+
+@media screen and (max-width: 578px) {
+  header{
+    display: none;
+  }
+
+  #container{
+    flex: 1;
+  }
+  #type-area{
+    flex: 1;
+  }
+  #type-area>form>input{
+    display: none;
+  }
+  #type-area>form>#sub{
+    display: none;
+  }
+  #type-area > ul {
+    height: 20%;
+  }
+  #type-area > #score {
+    height: 20%;
+  }
+  #tastiera{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+  #tastiera>div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+  }
+  #tastiera>div>button{
+    background-color: var(--colore-chiaro-hf);
+    border-color: var(--colore-chiaro-hf);
+    border-radius: 10px;
+    min-width: 2rem;
+    padding: .2rem;
+    text-align: center;
+  }
 }
+
+
+/* >>>>>>>>>>>>>>> over HD <<<<<<<<<<<<<<< */
 
 @media screen and (min-width: 2200px) {
   #try {
@@ -132,12 +249,19 @@ footer {
     margin: 0.5rem;
   }
 }
-@media screen and (orientation: portrait) {
-  header>nav>ul{
-    display: inline-flex;
-  }
-  header>nav>ul>li{
-    margin: .1rem;
-  }
 
-}
+
+
+
+/* #sfondo{
+  background-image: url("../img/sfondo.jpg");
+  opacity: 70%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+} */
+

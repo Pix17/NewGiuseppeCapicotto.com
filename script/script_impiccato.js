@@ -97,13 +97,64 @@ var presente = false;
 var fine = false;
 var letterePikkate = [];
 var pikkata;
+
+//bottoni smartphone
+document.getElementById("A").onclick = function(){insertB("a")};
+document.getElementById("B").onclick = function(){insertB("b")};
+document.getElementById("C").onclick = function(){insertB("c")};
+document.getElementById("D").onclick = function(){insertB("d")};
+document.getElementById("E").onclick = function(){insertB("e")};
+document.getElementById("F").onclick = function(){insertB("f")};
+document.getElementById("G").onclick = function(){insertB("g")};
+document.getElementById("H").onclick = function(){insertB("h")};
+document.getElementById("I").onclick = function(){insertB("i")};
+document.getElementById("J").onclick = function(){insertB("j")};
+document.getElementById("K").onclick = function(){insertB("k")};
+document.getElementById("L").onclick = function(){insertB("l")};
+document.getElementById("M").onclick = function(){insertB("m")};
+document.getElementById("N").onclick = function(){insertB("n")};
+document.getElementById("O").onclick = function(){insertB("o")};
+document.getElementById("P").onclick = function(){insertB("p")};
+document.getElementById("Q").onclick = function(){insertB("q")};
+document.getElementById("R").onclick = function(){insertB("r")};
+document.getElementById("S").onclick = function(){insertB("s")};
+document.getElementById("T").onclick = function(){insertB("t")};
+document.getElementById("U").onclick = function(){insertB("u")};
+document.getElementById("V").onclick = function(){insertB("v")};
+document.getElementById("W").onclick = function(){insertB("w")};
+document.getElementById("X").onclick = function(){insertB("x")};
+document.getElementById("Y").onclick = function(){insertB("y")};
+document.getElementById("Z").onclick = function(){insertB("z")};
+
 // gestione tasti
 sug.onclick = aiuto;
-try_btn.onclick = check;
+try_btn.onclick = insert;
+
+function insert(){
+  var tent = input.value.toLowerCase();
+  if(!fine){
+    check(tent);
+  }
+  else{
+    return true;
+  }
+  return false;
+}
+
+function insertB(tentB){
+  if(!fine){
+    check(tentB);
+  }
+  else{
+    return true;
+  }
+  return false;
+}
+
+
 
 // Funzione principale
-function check() {
-  var tentativo = input.value.toLowerCase();
+function check(tentativo) {
 
   pikkata = false;
   for (let i = 0; i < letterePikkate.length; i++) {
@@ -113,7 +164,6 @@ function check() {
   }
 
   if (pick(tentativo) && !pikkata) {
-    if (!fine) {
       for (let i = 0; i < parola_length; i++) {
         if (parola_scelta[i] == tentativo) {
           lettere[i].innerHTML = tentativo;
@@ -141,6 +191,7 @@ function check() {
         sug.style.display = "none";
       }
       if (indovinati == parola_length) {
+        document.getElementById("sub").style.display = "inherit";
         h3.innerHTML = "Hai vinto!";
         try_btn.innerHTML = "Gioca ancora";
         input.style.display = "none";
@@ -148,6 +199,7 @@ function check() {
           '<img src="img/impiccatoWin.png" alt="Traliccio dell impiccato">';
         fine = true;
       } else if (vite == 0) {
+        document.getElementById("sub").style.display = "inherit";
         h3.innerHTML = "Hai perso..";
         try_btn.innerHTML = "Gioca ancora";
         input.style.display = "none";
@@ -159,12 +211,7 @@ function check() {
       input.value = "";
       res.onclick = visualizza;
       return false;
-    }  else if (fine) {
-       return true;
-     }
-  } else if (fine) {
-    return true;
-  } else {
+  }else {
     input.value = "";
     return false;
   }
@@ -381,3 +428,6 @@ function pick(picked) {
       return false;
   }
 }
+
+
+
