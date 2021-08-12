@@ -1,82 +1,92 @@
-// Array base da 15 lettere
+// Array base da 15 lettere (massima dimensione possibile della parola)
 var lettere = [
- lettera1 = document.getElementById("letter1"),
- lettera2 = document.getElementById("letter2"),
- lettera3 = document.getElementById("letter3"),
- lettera4 = document.getElementById("letter4"),
- lettera5 = document.getElementById("letter5"),
- lettera6 = document.getElementById("letter6"),
- lettera7 = document.getElementById("letter7"),
- lettera8 = document.getElementById("letter8"),
- lettera9 = document.getElementById("letter9"),
- lettera10 = document.getElementById("letter10"),
- lettera11 = document.getElementById("letter11"),
- lettera12 = document.getElementById("letter12"),
- lettera13 = document.getElementById("letter13"),
- lettera14 = document.getElementById("letter14"),
- lettera15 = document.getElementById("letter15"),
+  (lettera1 = document.getElementById("letter1")),
+  (lettera2 = document.getElementById("letter2")),
+  (lettera3 = document.getElementById("letter3")),
+  (lettera4 = document.getElementById("letter4")),
+  (lettera5 = document.getElementById("letter5")),
+  (lettera6 = document.getElementById("letter6")),
+  (lettera7 = document.getElementById("letter7")),
+  (lettera8 = document.getElementById("letter8")),
+  (lettera9 = document.getElementById("letter9")),
+  (lettera10 = document.getElementById("letter10")),
+  (lettera11 = document.getElementById("letter11")),
+  (lettera12 = document.getElementById("letter12")),
+  (lettera13 = document.getElementById("letter13")),
+  (lettera14 = document.getElementById("letter14")),
+  (lettera15 = document.getElementById("letter15")),
 ];
 
 // Array delle parole possibili
-const parola = [
-    "ala","albero","acqua","aceto","abisso","acaro","alligatore","anatra","antilope","aragosta","avvoltoio","amsterdam","abbaco","accappatoio","accendino","aereoplano","almanacco","ambulanza","aquilone",
-    "bar","baco","babbuino","balena","barracuda","bradipo","berlino","baionetta","bambola","bambolotto","bandiera","baule","banana","bicicletta","boomerang",
-    "cane","camaleonte","cammello","canarino","canguro","capodoglio","cavallo","cerbiatto","chiocciola","coccinella","coccodrillo","coniglio","copenaghen","calcolatrice","calendario","calzamaglia","camomilla",
-        "cannocchiale","cappello","cassaforte","castello","clavicembalo","comodino","colla","computer","congelatore","cristallo","cucchiaio","chitarra",
-    "dado","dama","dito","daino","delfino","dinosauro","dobermann","drago","damasco","dublino","dardo","denaro","dentifricio","deodorante","diaframma","distintivo",
-    "elefante","ermellino","edimburgo","elicottero","equalizzatore","evidenziatore","etichettatrice",
-    "foglia","facocero","falco","fenicottero","formica","furetto","fantoccio","fagotto","farmacia","fiaccola","fiammifero","filigrana","finestra","fisarmonica","fioretto","fischietto","fuoco","forchetta","formaggio",
-        "fotocamera","fotocopiatrice","francobollo","frusta",
-    "gioco","gabbiano","gallina","gamberone","gazzella","ghepardo","granchio","gufo","gorilla","gavettone","gemelli","gigante","giocattolo","gioiello","giroscopio","gondola","grammofono","grappa",
-    "hotel",
-    "istrice","iena","iguana","ippopotamo","insetto","idrovolante","imbuto","impermeabile","inchiostro","ingranaggio","insalatiera",
-    "juventus",
-    "koala",
-    "lana","labrador","lamantino","lucertola","lussemburgo","lacrimogeno","lampadario","lampadina","lanciafiamme","lavatrice","legna","locomotiva","lubrificante",
-    "mare","maggiolino","macaco","maremmano","martello","merluzzo","montecarlo","macchina","medaglia","maglia","magnete","mangiacassette","mappamondo","matassa","materasso","mattarello","metropolitana","microprocessore","mongolfiera","mulinello",
-    "naso","nastro","nave","navigatore","navicella","negozio","nebulizzatore","neon","noccioline",
-    "orca","ornitorinco","orso","obliteratrice","occhiali","ombrello","ombrellone","ossigeno","osso",
-    "pinguino","panda","pappagallo","pastore","pellicano","pipistrello","porcospino","panama","pechino","parigi","pianoforte","pagliaccio","paladino","palla","pallone","pallottola","pannolino","pantaloni","pennello","paracadute","parafulmine",
-        "passaporto","passamontagna","patata","penna","piccone","pneumatico","portafogli","puzzle",
-    "quad","quercia","quaderno","quadro",
-    "rana","rinoceronte","roditore","roma","racchetta","radio","rastrello","riflettore","rimorchio","rivoltella","rompighiaccio","rossetto",
-    "serpente","salamandra","scarabeo","scimmia","squalo","sirena","singapore","stoccolma","sirena","sarcofago","sapone","satellite","scala","scanner","sciarpa","scorpione","schiaccianoci","scolapasta","scooter","scudetto","semaforo","sfigmomanometro",
-        "sigarette","smeraldo","soprammobile","spaventapasseri","spazzacamino",
-    "tonno","torta","tacchino","tarantola","tartaruga","talismano","tamburo","tappeto","tassametro","tastiera","telegramma","telecamera","telecomando","telefono","televisore","temperamatite","termometro","termosifone","torpediniera","tosaerba","trampolino","transatlantico",
-    "uva","uccello","uragano","umidificatore","utilitaria",
-    "vagone","varano","vespa","vitello","volpe","vienna","vapore","vascello","valanga","vespa","vetro","videocamera","violoncello","vocabolario",
-    "wireless",
-    "xilofono",
-    "yoga",
-    "zanzara","zaino","zaffiro","zebra","zerbino","zucchero"
+const parola = ["fotocopiatrice"]
+const parolaZ = [
+  "ala","albero","acqua","aceto","abisso","acaro","alligatore","anatra","antilope","aragosta","avvoltoio",
+  "amsterdam","abbaco","accappatoio","accendino","aereoplano","almanacco","ambulanza","aquilone",
+  "bar","baco","babbuino","balena","barracuda","bradipo","berlino","baionetta","bambola","bambolotto",
+  "bandiera","baule","banana","bicicletta","boomerang",
+  "cane","camaleonte","cammello","canarino","canguro","capodoglio","cavallo","cerbiatto","chiocciola",
+  "coccinella","coccodrillo","coniglio","copenaghen","calcolatrice","calendario","calzamaglia","camomilla",
+  "cannocchiale","cappello","cassaforte","castello","clavicembalo","comodino","colla","computer","congelatore",
+  "cristallo","cucchiaio","chitarra",
+  "dado","dama","dito","daino","delfino","dinosauro","dobermann","drago","damasco","dublino","dardo",
+  "denaro","dentifricio","deodorante","diaframma","distintivo",
+  "elefante","ermellino","edimburgo","elicottero","equalizzatore","evidenziatore","etichettatrice",
+  "foglia","facocero","falco","fenicottero","formica","furetto","fantoccio","fagotto","farmacia","fiaccola","fiammifero","filigrana",
+  "finestra","fisarmonica","fioretto","fischietto","fuoco","forchetta","formaggio","fotocamera","fotocopiatrice","francobollo","frusta",
+  "gioco","gabbiano","gallina","gamberone","gazzella","ghepardo","granchio","gufo","gorilla","gavettone",
+  "gemelli","gigante","giocattolo","gioiello","giroscopio","gondola","grammofono","grappa",
+  "hotel",
+  "istrice","iena","iguana","ippopotamo","insetto","idrovolante","imbuto","impermeabile","inchiostro","ingranaggio","insalatiera",
+  "juventus",
+  "koala",
+  "lana","labrador","lamantino","lucertola","lussemburgo","lacrimogeno","lampadario","lampadina","lanciafiamme","lavatrice","legna","locomotiva","lubrificante",
+  "mare","maggiolino","macaco","maremmano","martello","merluzzo","montecarlo","macchina","medaglia","maglia","magnete",
+  "mangiacassette","mappamondo","matassa","materasso","mattarello","metropolitana","microprocessore","mongolfiera","mulinello",
+  "naso","nastro","nave","navigatore","navicella","negozio","nebulizzatore","neon","noccioline",
+  "orca","ornitorinco","orso","obliteratrice","occhiali","ombrello","ombrellone","ossigeno","osso",
+  "pinguino","panda","pappagallo","pastore","pellicano","pipistrello","porcospino","panama","pechino","parigi","pianoforte","pagliaccio","paladino","palla","pallone",
+  "pallottola","pannolino","pantaloni","pennello","paracadute","parafulmine","passaporto","passamontagna","patata","penna","piccone","pneumatico","portafogli","puzzle",
+  "quad","quercia","quaderno","quadro",
+  "rana","rinoceronte","roditore","roma","racchetta","radio","rastrello","riflettore","rimorchio","rivoltella","rompighiaccio","rossetto",
+  "serpente","salamandra","scarabeo","scimmia","squalo","sirena","singapore","stoccolma","sirena","sarcofago","sapone","satellite","scala","scanner",
+  "sciarpa","scorpione","schiaccianoci","scolapasta","scooter","scudetto","semaforo","sfigmomanometro","sigarette","smeraldo",
+  "soprammobile","spaventapasseri","spazzacamino",
+  "tonno","torta","tacchino","tarantola","tartaruga","talismano","tamburo","tappeto","tassametro","tastiera","telegramma",
+  "telecamera","telecomando","telefono","televisore","temperamatite","termometro","termosifone","torpediniera","tosaerba","trampolino","transatlantico",
+  "uva",
+  "uccello","uragano","umidificatore","utilitaria",
+  "vagone","varano","vespa","vitello","volpe","vienna","vapore","vascello","valanga","vespa","vetro","videocamera","violoncello","vocabolario","wireless",
+  "xilofono",
+  "yoga",
+  "zanzara","zaino","zaffiro","zebra","zerbino","zucchero"
 ];
 
 // Array delle immagini
 var immagini = [
-    '<img src="img/impiccato0.png" alt="Traliccio dell impiccato">',
-    '<img src="img/impiccato1.png" alt="Traliccio dell impiccato">',
-    '<img src="img/impiccato2.png" alt="Traliccio dell impiccato">',
-    '<img src="img/impiccato3.png" alt="Traliccio dell impiccato">',
-    '<img src="img/impiccato4.png" alt="Traliccio dell impiccato">',
+  '<img src="img/impiccato0.png" alt="Traliccio dell impiccato">',
+  '<img src="img/impiccato1.png" alt="Traliccio dell impiccato">',
+  '<img src="img/impiccato2.png" alt="Traliccio dell impiccato">',
+  '<img src="img/impiccato3.png" alt="Traliccio dell impiccato">',
+  '<img src="img/impiccato4.png" alt="Traliccio dell impiccato">',
 ];
 
 // Prendo un elemento nell array delle parole e la sua lunghezza
-var select = Math.floor(Math.random() * parola.length); 
+var select = Math.floor(Math.random() * parola.length);
 var parola_scelta = parola[select];
 var parola_length = parola[select].length;
 var trovate = [];
 
-for(let i=0; i<lettere.length; i++){
-    if(parola_scelta[i] == undefined){
-        lettere[i].style.display = "none";
-    }else{
-        trovate[i]=false;
-    }
+for (let i = 0; i < lettere.length; i++) {
+  if (parola_scelta[i] == undefined) {
+    lettere[i].style.display = "none";
+  } else {
+    trovate[i] = false;
+  }
 }
-// Mi semplifico tramite costanti gli elementi riutilizzati piu volte
+// Semplifico tramite costanti gli elementi riutilizzati piu volte
 const try_btn = document.getElementById("sub");
 const input = document.getElementById("try");
-const h1 = document.getElementById("vite");
+const h3 = document.getElementById("vite");
 const res = document.getElementById("res");
 const img = document.getElementById("container");
 const sug = document.getElementById("sug");
@@ -87,117 +97,255 @@ var indovinati = 0;
 var presente = false;
 var fine = false;
 
+// gestione tasti
 sug.onclick = aiuto;
+try_btn.onclick = check;
 
 // Funzione principale
-try_btn.onclick = function(){
-    if(!fine){
-        var tentativo = input.value.toLowerCase();
-        
-        for(let i=0; i<parola_length; i++){
-            if(parola_scelta[i] == tentativo){
-                lettere[i].innerHTML = tentativo;
-                presente=true;
-                trovate[i]=presente;
-                indovinati++;
-                lettere[i].style.transition = ".8s";
-                lettere[i].style.backgroundColor = "var(--indovinata)";
-                if(+screen.width > 768){
-                    lettere[i].style.transform = "rotate(-360deg) scale(1.5)";
-                }else{
-                    lettere[i].style.transform = "rotate(-360deg)";
-                }
-            }
+function check() {
+  var tentativo = input.value.toLowerCase();
+
+  if(pick(tentativo)){
+    if (!fine) {
+      
+      for (let i = 0; i < parola_length; i++) {
+        if (parola_scelta[i] == tentativo) {
+          lettere[i].innerHTML = tentativo;
+          presente = true;
+          trovate[i] = presente;
+          indovinati++;
+          lettere[i].style.transition = ".8s";
+          lettere[i].style.backgroundColor = "var(--indovinata)";
+          if (+screen.width > 2820) {
+            lettere[i].style.transform = "rotate(-360deg) scale(2)";
+          } else if (+screen.width > 768) {
+            lettere[i].style.transform = "rotate(-360deg) scale(1.3)";
+          } else {
+            lettere[i].style.transform = "rotate(-360deg)";
+          }
         }
-        if(!presente){
-            vite--;
-            h1.innerHTML = "Hai a disposizione "+vite+" vite";
-            container.innerHTML = immagini[vite];
-        }
-        presente=false;
-        if(indovinati+1 == parola_length) {
-            sug.style.display = "none";
-        }          
-        if(indovinati == parola_length){
-            h1.innerHTML = "Hai vinto!";
-            try_btn.innerHTML = "Gioca ancora";
-            input.style.display = "none";
-            container.innerHTML = '<img src="img/impiccatoWin.png" alt="Traliccio dell impiccato">';
-            fine = true;     
-        }else if(vite == 0){
-            h1.innerHTML = "Hai perso..";
-            try_btn.innerHTML = "Gioca ancora"; 
-            input.style.display = "none"; 
-            res.style.display = "inherit";
-            sug.style.display = "none";
-            // container.innerHTML = '<img src="img/impiccato0.png" alt="Traliccio dell impiccato">';
-            fine = true;     
-        }
-        input.value = "";
-        res.onclick = visualizza;
-        return false;
-    }
-    else if(fine){
-        return true;
-    }
+      }
+      if (!presente) {
+        vite--;
+        h3.innerHTML = "Hai a disposizione " + vite + " vite";
+        container.innerHTML = immagini[vite];
+      }
+      presente = false;
+      if (indovinati + 1 == parola_length) {
+        sug.style.display = "none";
+      }
+      if (indovinati == parola_length) {
+        h3.innerHTML = "Hai vinto!";
+        try_btn.innerHTML = "Gioca ancora";
+        input.style.display = "none";
+        container.innerHTML =
+          '<img src="img/impiccatoWin.png" alt="Traliccio dell impiccato">';
+        fine = true;
+      } else if (vite == 0) {
+        h3.innerHTML = "Hai perso..";
+        try_btn.innerHTML = "Gioca ancora";
+        input.style.display = "none";
+        res.style.display = "inherit";
+        sug.style.display = "none";
+        // container.innerHTML = '<img src="img/impiccato0.png" alt="Traliccio dell impiccato">';
+        fine = true;
+      }
+      input.value = "";
+      res.onclick = visualizza;
+      return false;
+    }// else if (fine) {
+    //   return true;
+    // }
+  } else if (fine) {
+    return true;
+  }else{
+    return false;
+  }
+
 }
 
-
-// Funzione accessoria
-function visualizza(){
-    for(let i=0; i<parola_length; i++){
-        
-        lettere[i].innerHTML = parola_scelta[i];
-        if(!trovate[i]){   
-            lettere[i].style.transition = ".8s";   
-            lettere[i].style.transform = "translateY(1rem)";      
-            lettere[i].style.backgroundColor = "var(--non-indovinata)";
-            }
+// Funzione visualizza numeri non indovinati
+function visualizza() {
+  for (let i = 0; i < parola_length; i++) {
+    lettere[i].innerHTML = parola_scelta[i];
+    if (!trovate[i]) {
+      lettere[i].style.transition = ".8s";
+      lettere[i].style.transform = "translateY(1rem)";
+      lettere[i].style.backgroundColor = "var(--non-indovinata)";
     }
-    res.style.display = "none";
-    return false;
+  }
+  res.style.display = "none";
+  return false;
 }
 
-function aiuto(){
-    var fatto = false;
-    do{
-        var fortunata = Math.floor(Math.random() * parola_length); 
-        if(!trovate[fortunata]){
-            lettere[fortunata].innerHTML = parola_scelta[fortunata];
-            fatto = true;
-            }
-    }while(!fatto);
-
-    
-
-    sug.style.display = "none";
-    //  trovate[fortunata]=true;
-    //  indovinati++;
-    //  lettere[fortunata].style.transition = ".8s";
-    //  lettere[fortunata].style.backgroundColor = "var(--suggerita)";
-    //  if(+screen.width > 768){
-    //      lettere[fortunata].style.transform = "rotate(-360deg) scale(1.5)";
-    //  }else{
-    //      lettere[fortunata].style.transform = "rotate(-360deg)";
-    //  }
-
-
-
-    for(let i=0; i<parola_length; i++){
-        if(parola_scelta[i] == parola_scelta[fortunata]){
-            lettere[i].innerHTML = parola_scelta[i];
-            trovate[i]=true;
-            indovinati++;
-            lettere[i].style.transition = ".8s";
-            lettere[i].style.backgroundColor = "var(--suggerita)";
-            if(+screen.width > 768){
-                lettere[i].style.transform = "rotate(-360deg) scale(1.5)";
-            }else{
-                lettere[i].style.transform = "rotate(-360deg)";
-     }
-             
-        }
+ // Funzione aiuto, scopre una lettera ( o piu se ripetute)
+function aiuto() {
+  var fatto = false;
+  do {
+    var fortunata = Math.floor(Math.random() * parola_length);
+    if (!trovate[fortunata]) {
+      lettere[fortunata].innerHTML = parola_scelta[fortunata];
+      fatto = true;
     }
-    
-    return false;
+  } while (!fatto);
+
+  sug.style.display = "none";
+
+  for (let i = 0; i < parola_length; i++) {
+    if (parola_scelta[i] == parola_scelta[fortunata]) {
+      lettere[i].innerHTML = parola_scelta[i];
+      trovate[i] = true;
+      indovinati++;
+      lettere[i].style.transition = ".8s";
+      lettere[i].style.backgroundColor = "var(--suggerita)";
+      if (+screen.width > 768) {
+        lettere[i].style.transform = "rotate(355deg) scale(1.3)";
+      } else {
+        lettere[i].style.transform = "rotate(-360deg)";
+      }
+    }
+  }
+
+  return false;
+}
+
+// Ricorda le lettere pikkate
+function pick(picked){
+  var pkd = document.getElementById(picked);
+  switch(picked){
+    case 'a':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'b':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'c':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'd':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'e':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'f':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'g':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'h':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'i':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'j':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'k':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'l':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'm':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'n':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'o':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'p':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'q':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'r':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 's':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 't':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'u':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'v':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'w':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'x':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'y':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    case 'z':
+      pkd.style.transition = "1s";
+      pkd.style.transform = "scale(1) rotateY(1440deg)";
+      pkd.style.backgroundColor = "lightgreen";
+      break;
+    default:
+      return false;
+      break;
+  }
+  return true;
 }

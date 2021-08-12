@@ -10,11 +10,8 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="GiuseppeCapicotto.com" />
-    <meta property="og:image" content="img/" />
-    <meta
-      property="og:description"
-      content="WebDev, in continua evoluzione!!"
-    />
+    <!-- <meta property="og:image" content="img/" /> -->
+    <meta property="og:description" content="Il classico gioco dell'impiccato!"/>
     <meta property="og:url" content="https://www.giuseppecapicotto.com/" />
 
     <link rel="stylesheet" href="css/style.css" />
@@ -22,29 +19,54 @@
     <title>Impiccato</title>
   </head>
   <body>
+    <!-- <div id="sfondo"></div> -->
     <header>
-      <nav>
-        <!-- <a href="https://www.giuseppecapicotto.com">
+      <!-- <nav>
+        <a href="https://www.giuseppecapicotto.com">
           <img src="logo.png" alt="Logo header" />
-        </a> -->
-      </nav>
+        </a>
+      </nav> -->
       <nav>
         <ul>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
+          <li id="a">A</li>
+          <li id="b">B</li>
+          <li id="c">C</li>
+          <li id="d">D</li>
+          <li id="e">E</li>
+          <li id="f">F</li>
+          <li id="g">G</li>
+          <li id="h">H</li>
+          <li id="i">I</li>
+          <li id="j">J</li>
+          <li id="k">K</li>
+          <li id="l">L</li>
+          <li id="m">M</li>
         </ul>
       </nav>
-      <button id="menu" class="btn">=</button>
-      <button id="night-btn" class="btn">Tema scuro</button>
+      <nav>
+          <ul>
+          <li id="n">N</li>
+          <li id="o">O</li>
+          <li id="p">P</li>
+          <li id="q">Q</li>
+          <li id="r">R</li>
+          <li id="s">S</li>
+          <li id="t">T</li>
+          <li id="u">U</li>
+          <li id="v">V</li>
+          <li id="w">W</li>
+          <li id="x">X</li>
+          <li id="y">Y</li>
+          <li id="z">Z</li>
+        </ul>
+      </nav>
+      <!-- <button id="menu" class="btn">=</button>
+      <button id="night-btn" class="btn">Tema scuro</button> -->
     </header>
     <main>
       <div id="menu-scomparsa">
         <ul>
           <li><button id="menu-night-btn" class="btn">Tema scuro</button></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
         </ul>
       </div>
       <div id="container">
@@ -69,13 +91,20 @@
           <li id="letter15">*</li>
         </ul>
         <form>
-          <input type="text" id="try" maxlength="1" placeholder="az" autofocus  autocomplete="off" />
+          <input
+            type="text"
+            id="try"
+            maxlength="1"
+            placeholder="az"
+            autofocus
+            autocomplete="off"     
+          />
           <button id="sub" class="end-btn">Inserisci</button>
           <button id="res" class="end-btn">Visualizza parola</button>
           <button id="sug" class="end-btn">Aiutino?!</button>
         </form>
         <div id="score">
-          <h1 id="vite">Hai a disposizione 4 vite</h1>
+          <h3 id="vite">Hai a disposizione 4 vite</h3>
         </div>
       </div>
     </main>
