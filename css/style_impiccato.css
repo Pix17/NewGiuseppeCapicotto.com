@@ -14,7 +14,9 @@
   background-size: cover;
   z-index: -1;
 } */
-
+body{
+  height: 100vh;
+}
 header{
   justify-content: center;
   flex-wrap: wrap;
