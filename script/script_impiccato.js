@@ -18,8 +18,8 @@ var lettere = [
 ];
 
 // Array delle parole possibili
-const parola = ["fotocopiatrice"]
-const parolaZ = [
+// const parola = ["fotocopiatrice"]
+const parola = [
   "ala","albero","acqua","aceto","abisso","acaro","alligatore","anatra","antilope","aragosta","avvoltoio",
   "amsterdam","abbaco","accappatoio","accendino","aereoplano","almanacco","ambulanza","aquilone",
   "bar","baco","babbuino","balena","barracuda","bradipo","berlino","baionetta","bambola","bambolotto",
