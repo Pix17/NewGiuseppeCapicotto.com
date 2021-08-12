@@ -60,7 +60,6 @@ const parola = [
   "yoga",
   "zanzara","zaino","zaffiro","zebra","zerbino","zucchero"
 ];
-
 // Array delle immagini
 var immagini = [
   '<img src="img/impiccato0.png" alt="Traliccio dell impiccato">',
@@ -96,7 +95,8 @@ var vite = 4;
 var indovinati = 0;
 var presente = false;
 var fine = false;
-
+var letterePikkate = [];
+var pikkata;
 // gestione tasti
 sug.onclick = aiuto;
 try_btn.onclick = check;
@@ -105,9 +105,15 @@ try_btn.onclick = check;
 function check() {
   var tentativo = input.value.toLowerCase();
 
-  if(pick(tentativo)){
+  pikkata = false;
+  for (let i = 0; i < letterePikkate.length; i++) {
+    if (tentativo == letterePikkate[i]) {
+      pikkata = true;
+    }
+  }
+
+  if (pick(tentativo) && !pikkata) {
     if (!fine) {
-      
       for (let i = 0; i < parola_length; i++) {
         if (parola_scelta[i] == tentativo) {
           lettere[i].innerHTML = tentativo;
@@ -153,15 +159,15 @@ function check() {
       input.value = "";
       res.onclick = visualizza;
       return false;
-    }// else if (fine) {
-    //   return true;
-    // }
+    }  else if (fine) {
+       return true;
+     }
   } else if (fine) {
     return true;
-  }else{
+  } else {
+    input.value = "";
     return false;
   }
-
 }
 
 // Funzione visualizza numeri non indovinati
@@ -178,7 +184,7 @@ function visualizza() {
   return false;
 }
 
- // Funzione aiuto, scopre una lettera ( o piu se ripetute)
+// Funzione aiuto, scopre una lettera ( o piu se ripetute)
 function aiuto() {
   var fatto = false;
   do {
@@ -193,6 +199,7 @@ function aiuto() {
 
   for (let i = 0; i < parola_length; i++) {
     if (parola_scelta[i] == parola_scelta[fortunata]) {
+      pick(parola_scelta[i]);
       lettere[i].innerHTML = parola_scelta[i];
       trovate[i] = true;
       indovinati++;
@@ -210,142 +217,167 @@ function aiuto() {
 }
 
 // Ricorda le lettere pikkate
-function pick(picked){
+function pick(picked) {
   var pkd = document.getElementById(picked);
-  switch(picked){
-    case 'a':
+  switch (picked) {
+    case "a":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'b':
+      return true;
+    case "b":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'c':
+      return true;
+    case "c":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'd':
+      return true;
+    case "d":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'e':
+      return true;
+    case "e":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'f':
+      return true;
+    case "f":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'g':
+      return true;
+    case "g":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'h':
+      return true;
+    case "h":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'i':
+      return true;
+    case "i":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'j':
+      return true;
+    case "j":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'k':
+      return true;
+    case "k":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'l':
+      return true;
+    case "l":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'm':
+      return true;
+    case "m":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'n':
+      return true;
+    case "n":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'o':
+      return true;
+    case "o":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'p':
+      return true;
+    case "p":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'q':
+      return true;
+    case "q":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'r':
+      return true;
+    case "r":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 's':
+      return true;
+    case "s":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 't':
+      return true;
+    case "t":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'u':
+      return true;
+    case "u":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'v':
+      return true;
+    case "v":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'w':
+      return true;
+    case "w":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'x':
+      return true;
+    case "x":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'y':
+      return true;
+    case "y":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
-    case 'z':
+      return true;
+    case "z":
+      letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
-      break;
+      return true;
     default:
+      console.log(letterePikkate);
       return false;
-      break;
   }
-  return true;
 }
