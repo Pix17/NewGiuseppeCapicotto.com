@@ -183,7 +183,7 @@ function check(tentativo) {
       }
       if (!presente) {
         vite--;
-        h3.innerHTML = "Hai a disposizione " + vite + " vite";
+        h3.innerHTML = "Vite: " + vite;
         container.innerHTML = immagini[vite];
       }
       presente = false;
@@ -199,7 +199,7 @@ function check(tentativo) {
           '<img src="img/impiccatoWin.png" alt="Traliccio dell impiccato">';
         fine = true;
       } else if (vite == 0) {
-        document.getElementById("sub").style.display = "inherit";
+        document.getElementById("sub").style.display = "flex";
         h3.innerHTML = "Hai perso..";
         try_btn.innerHTML = "Gioca ancora";
         input.style.display = "none";
@@ -272,156 +272,208 @@ function pick(picked) {
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      A.style.backgroundColor = "var(--colore-select)";
+      A.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "b":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      B.style.backgroundColor = "var(--colore-select)";
+      B.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "c":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      C.style.backgroundColor = "var(--colore-select)";
+      C.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "d":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      D.style.backgroundColor = "var(--colore-select)";
+      D.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "e":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      E.style.backgroundColor = "var(--colore-select)";
+      E.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "f":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      F.style.backgroundColor = "var(--colore-select)";
+      F.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "g":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      G.style.backgroundColor = "var(--colore-select)";
+      G.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "h":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      H.style.backgroundColor = "var(--colore-select)";
+      H.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "i":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      I.style.backgroundColor = "var(--colore-select)";
+      I.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "j":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      J.style.backgroundColor = "var(--colore-select)";
+      J.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "k":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      K.style.backgroundColor = "var(--colore-select)";
+      K.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "l":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      L.style.backgroundColor = "var(--colore-select)";
+      L.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "m":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      M.style.backgroundColor = "var(--colore-select)";
+      M.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "n":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      N.style.backgroundColor = "var(--colore-select)";
+      N.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "o":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      O.style.backgroundColor = "var(--colore-select)";
+      O.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "p":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      P.style.backgroundColor = "var(--colore-select)";
+      P.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "q":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      Q.style.backgroundColor = "var(--colore-select)";
+      Q.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "r":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      R.style.backgroundColor = "var(--colore-select)";
+      R.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "s":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      S.style.backgroundColor = "var(--colore-select)";
+      S.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "t":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      T.style.backgroundColor = "var(--colore-select)";
+      T.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "u":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      U.style.backgroundColor = "var(--colore-select)";
+      U.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "v":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      V.style.backgroundColor = "var(--colore-select)";
+      V.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "w":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      W.style.backgroundColor = "var(--colore-select)";
+      W.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "x":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      X.style.backgroundColor = "var(--colore-select)";
+      X.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "y":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      Y.style.backgroundColor = "var(--colore-select)";
+      Y.style.borderColor = "var(--colore-select-bordo)";
       return true;
     case "z":
       letterePikkate.push(picked);
       pkd.style.transition = "1s";
       pkd.style.transform = "scale(1) rotateY(1440deg)";
       pkd.style.backgroundColor = "lightgreen";
+      Z.style.backgroundColor = "var(--colore-select)";
+      Z.style.borderColor = "var(--colore-select-bordo)";
       return true;
     default:
       console.log(letterePikkate);

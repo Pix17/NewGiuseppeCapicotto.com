@@ -35,11 +35,15 @@ Using max-width
 }
 
 :root {
-  --colore-scuro-hf: rgba(48, 54, 129, 0.5);
-  --colore-scuro-main: rgba(44, 49, 114, 0.5);
-  --colore-chiaro-hf: rgba(12, 193, 238, 0.5);
-  --colore-chiaro-main: rgba(12, 193, 238, 0.1);
-  --ombra-chiara: 10px 1px 15px rgba(12, 193, 238, 0.5);
+  --colore-chiaro-h: rgba(12, 193, 238, 0.8);
+  --colore-chiaro-container: rgba(12, 193, 238, 0.2);
+  --colore-chiaro-btn: rgba(12, 193, 238, 0.9);
+  --colore-chiaro-btn-bordo: rgba(86, 217, 250, 0.8);
+
+  --colore-select: rgba(193, 250, 86, 0.9);
+  --colore-select-bordo: rgba(187, 250, 86, 0.8);
+
+  --ombra-chiara: 10px 1px 15px rgba(255, 255, 255, 0.5);
   --ombra-scura: 10px 1px 15px rgba(48, 54, 129, 1);
   --indovinata: rgba(255, 255, 0, 0.8);
   --non-indovinata: rgba(255, 0, 0, 0.8);
@@ -61,7 +65,7 @@ body {
 
 header {
   flex: 1 5%;
-  background-color: var(--colore-chiaro-hf);
+  background-color: var(--colore-chiaro-h);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -70,26 +74,25 @@ header {
   box-shadow: var(--ombra-chiara);
   padding: 0 2rem;
 }
-header>nav>ul>li{
+header > nav > ul > li {
   background-color: black;
   border-radius: 5px;
-  padding: .4rem;
+  padding: 0.4rem;
   transform: scale(0.05);
 }
-header>nav>ul {
+header > nav > ul {
   display: inline-flex;
 }
-header>nav>ul>li{
+header > nav > ul > li {
   margin: 0 1rem;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
 main {
   flex: 1 95%;
-  background-color: var(--colore-chiaro-main);
   display: flex;
   flex-direction: column;
 }
@@ -98,7 +101,7 @@ main {
   margin: 1% 10%;
   height: 70%;
   border-radius: 40px;
-  background-color: var(--colore-chiaro-hf);
+  background-color: var(--colore-chiaro-container);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,7 +123,7 @@ main {
   height: 50%;
 }
 #type-area > ul > li {
-  background-color: var(--colore-chiaro-hf);
+  background-color: var(--colore-chiaro-h);
   width: 5rem;
   text-align: center;
   font-size: 3rem;
@@ -153,7 +156,8 @@ main {
   margin: 0.2rem;
   border-radius: 8px;
   border: none;
-  background-color: var(--colore-chiaro-hf);
+  background-color: var(--colore-chiaro-btn);
+  box-shadow: var(--ombra-chiara);
   font-size: 1rem;
 }
 .end-btn:hover {
@@ -170,68 +174,85 @@ main {
 #res {
   display: none;
 }
-#tastiera{
+#tastiera {
   display: none;
 }
 
-
 /* >>>>>>>>>>>>>>> smartphone <<<<<<<<<<<<<<< */
 
-
 @media screen and (orientation: portrait) {
-  header>nav>ul{
+  header > nav > ul {
     display: inline-flex;
   }
-  header>nav>ul>li{
-    margin: .1rem;
+  header > nav > ul > li {
+    margin: 0.1rem;
   }
 }
 
-@media screen and (max-width: 578px) {
-  header{
+@media screen and (max-width: 568px) {
+  header {
     display: none;
   }
-
-  #container{
+  #container {
+    flex: 1;
+    margin: 0;
+    width: 100%;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  #type-area {
     flex: 1;
   }
-  #type-area{
-    flex: 1;
+  #type-area > form {
+    align-items: baseline;
   }
-  #type-area>form>input{
+  #type-area > form > input {
     display: none;
   }
-  #type-area>form>#sub{
+  #type-area > form > #sub {
     display: none;
+    border: 2px var(--colore-chiaro-btn-bordo) outset;
+    font-weight: bold;
+  }
+  #type-area > form > #sug {
+    border: 2px var(--colore-chiaro-btn-bordo) outset;
+    font-weight: bold;
+  }
+  #type-area > form > #res {
+    border: 2px var(--colore-chiaro-btn-bordo) outset;
+    font-weight: bold;
   }
   #type-area > ul {
     height: 20%;
   }
   #type-area > #score {
-    height: 20%;
+    height: 10%;
   }
-  #tastiera{
+  #tastiera {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
   }
-  #tastiera>div{
+  #tastiera > div {
     display: flex;
     justify-content: space-around;
     margin-top: 1rem;
   }
-  #tastiera>div>button{
-    background-color: var(--colore-chiaro-hf);
-    border-color: var(--colore-chiaro-hf);
+  #tastiera > div > button {
+    background-color: var(--colore-chiaro-btn);
+    border-color: var(--colore-chiaro-btn-bordo);
     border-radius: 10px;
+    box-shadow: var(--ombra-chiara);
+    font-size: 1.2rem;
+    font-weight: 600;
     min-width: 2rem;
-    padding: .2rem;
+    padding: 0.5rem;
     text-align: center;
   }
-}
 
+}
 
 /* >>>>>>>>>>>>>>> over HD <<<<<<<<<<<<<<< */
 
@@ -250,9 +271,6 @@ main {
   }
 }
 
-
-
-
 /* #sfondo{
   background-image: url("../img/sfondo.jpg");
   opacity: 70%;
@@ -264,4 +282,3 @@ main {
   background-size: cover;
   z-index: -1;
 } */
-
