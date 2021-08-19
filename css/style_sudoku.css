@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#patina{
+  display: none;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  background-color: white;
+  z-index: 1;
+  opacity: 40%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  background-color: lightseagreen;
+  width: 100%;
+  font-family: Ubuntu;
+  /* font-family: "Montserrat", sans-serif; */
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+}
+header>h1{
+  z-index: 1;
+  text-shadow: 0 0 8px #fff,-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input[type="number"] {
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  border: none;
+  margin: 0.1rem;
+  font-size: 1rem;
+}
+input[type="number"]:hover {
+  -moz-appearance: textfield;
+  background-color: chartreuse;
+}
+.btn {
+  background-color: chartreuse;
+  border: none;
+  border-radius: 20px;
+  margin-top: .5rem;
+  padding: 0.3rem;
+  font-family: Ubuntu;
+  /* font-family: "Montserrat", sans-serif; */
+  font-weight: bold;
+  z-index: 1;
+}
+button[id="verifica"] {
+  display: none;
+}
+button[id="continua"] {
+  display: none;
+}
+
+.square {
+  width: 7rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.1rem;
+  /* opacity: 50%; */
+}
+
+#sudoku {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22rem;
+  flex-wrap: wrap;
+}
+
+#risultato {
+  position: absolute;
+  display: none;
+  border-radius: 20px;
+  flex-direction: column;
+  width: 25rem;
+  justify-content: center;
+  align-items: center;
+  background-color: chartreuse;
+  z-index: 1;
+  padding: .3rem;
+}
+
+@media screen and (max-width: 575.98px) {
+  .btn {
+    font-size: 1.1rem;
+    padding: 0.4rem;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #risultato {
+    border-radius: 0;
+    width: 100%;
+    padding: 1rem;
+  
+  }
+}
