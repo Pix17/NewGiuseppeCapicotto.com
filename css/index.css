@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  /* padding: 0; */
+}
+:root {
+  --color-bg: rgb(213, 252, 255);
+  --color-tile1: rgba(164, 222, 255, 0.4);
+  --color-shadow-tile1: rgb(61, 187, 236);
+  --color-tile2: rgba(255, 114, 37, 0.6);
+  --color-shadow-tile2: rgb(219, 27, 27);
+  --color-text: rgb(85, 26, 139);
+  --bradius: 30px;
+}
+@font-face {
+  font-family: "cascadia";
+  src: url(../font/Cascadia.ttf);
+}
+
+body {
+  background-color: var(--color-bg);
+}
+
+#container {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / 7;
+  grid-row: 1 / 2;
+  background-color: var(--color-tile1);
+  box-shadow: 0 0 10px var(--color-shadow-tile1);
+  padding: 0.5rem;
+  border-radius: 0 0 30px 0;
+}
+#description {
+  grid-column: 7 / -1;
+  grid-row: 1 / 2;
+  background-color: var(--color-tile2);
+  box-shadow: 0 0 10px var(--color-shadow-tile2);
+  padding: 1.5rem 0.5rem;
+  border-radius: 0 0 0 30px;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "cascadia";
+  font-size: 1rem;
+  text-shadow: 0 0 8px #fff, -1px 0 white, 0 1px white, 1px 0 white,
+    0 -1px white;
+}
+#impiccato {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  height: 10rem;
+  overflow: hidden;
+  background-color: var(--color-tile1);
+  box-shadow: 0 0 10px var(--color-shadow-tile1);
+  border-radius: 30px;
+}
+#impiccato > a > img {
+  width: 100%;
+  color: var(--color-text);
+}
+
+#sudoku {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  height: 5rem;
+  background-color: var(--color-tile2);
+  box-shadow: 0 0 10px var(--color-shadow-tile2);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sudoku > a {
+  font-size: 3rem;
+  font-family: "cascadia";
+  text-decoration: none;
+  text-shadow: 0 0 8px #fff, -1px 0 white, 0 1px white, 1px 0 white,
+    0 -1px white;
+}
+#snake-wp {
+  grid-column: 1 / -1;
+  grid-row: 4 / 5;
+  border-radius: 30px;
+  height: 10rem;
+  background-color: var(--color-tile1);
+  box-shadow: 0 0 10px var(--color-shadow-tile1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-family: "cascadia";
+  color: var(--color-text);
+  text-shadow: 0 0 8px #fff, -1px 0 white, 0 1px white, 1px 0 white,
+    0 -1px white;
+}
+#tic-tac-toe-wp {
+  grid-column: 1 / -1;
+  grid-row: 5 / 6;
+  border-radius: 30px;
+  height: 10rem;
+  background-color: var(--color-tile2);
+  box-shadow: 0 0 10px var(--color-shadow-tile2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-family: "cascadia";
+  color: var(--color-text);
+  text-shadow: 0 0 8px #fff, -1px 0 white, 0 1px white, 1px 0 white,
+    0 -1px white;
+}
+@media screen and (min-width: 400px) {
+   
+ 
+    #container{
+        height: 100vh;
+    }
+
+  #description {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    border-radius: 0 0 30px 0;
+  }
+  #sudoku {
+    grid-column: 5 / -1;
+    grid-row: 1 / 2;
+    height: initial;
+    border-radius: 0 0 0 30px;
+  }
+  #impiccato {
+    overflow: hidden;
+    height: 40rem;
+    grid-column: 1 / 10;
+    grid-row: 2 / 4;
+    border-radius: 0 30px 30px 0;
+    height: initial;
+}
+
+  #logo {
+    grid-column: 10 / -1;
+    grid-row: 2 / 4;
+    border-radius: 30px 0 0 30px;
+  }
+
+  #snake-wp {
+    grid-column: 7 / -1;
+    grid-row: 4 / 5;
+    border-radius: 30px 0 0 0;
+}
+
+#tic-tac-toe-wp {
+    grid-column: 1 / 7;
+    grid-row: 4 / 5;
+    border-radius: 0 30px 0 0;
+  }
+}
